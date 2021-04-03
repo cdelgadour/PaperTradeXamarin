@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PaperTradeXamarin.Views.WalletPage"
+             xmlns:viewmodels="clr-namespace:PaperTradeXamarin.ViewModels"
+             xmlns:model="clr-namespace:PaperTradeXamarin.Models"
+             x:DataType="viewmodels:WalletViewModel"
+             x:Name="WalletView"
+             >
+    <ContentPage.BindingContext>
+        <viewmodels:WalletViewModel/>
+    </ContentPage.BindingContext>
+
+    <ListView ItemsSource="{Binding Wallets}"
+              CachingStrategy="RecycleElement"
+              IsPullToRefreshEnabled="True"
+              RowHeight="200"
+              IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+              RefreshCommand="{Binding RefreshCommand}">
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="model:Wallet">
+                <ViewCell>
+                    <StackLayout>
+                        <Label Text="{Binding CurrencyValue}"/>
+                        <Label Text="{Binding Balance}"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                NumberOfTapsRequired="1"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:WalletViewModel}}, Path=WalletTapped}"		
+                                CommandParameter="{Binding .}">
+                            </TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

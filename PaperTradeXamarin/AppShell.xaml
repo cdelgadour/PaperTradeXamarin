@@ -30,9 +30,10 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="About" Icon="icon_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
-        <ShellContent Title="Browse" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
-        <ShellContent Title="Market" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:MarketView}" />
+        <ShellContent Title="Transactions" Icon="icon_about.png" Route="TransactionListPage" ContentTemplate="{DataTemplate local:TransactionList}" />
+        <ShellContent Title="Markets" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:MarketView}" />
+        <ShellContent Title="Wallets" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:WalletPage}" />
+        <ShellContent Title="Trade" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:TransactionElection}" />
     </TabBar>
 
     <!--

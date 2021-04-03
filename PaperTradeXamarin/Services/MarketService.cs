@@ -18,6 +18,7 @@ namespace PaperTradeXamarin.Services
         static MarketService()
         {
             client = new HttpClient();
+            client.Timeout = TimeSpan.FromSeconds(20);
         }
 
         public static async Task<IEnumerable<Market>> GetMarket()
@@ -27,11 +28,25 @@ namespace PaperTradeXamarin.Services
             ObservableRangeCollection<Market> markets = responseObj.Result;
             return markets;
         } 
+
+        public static async Task<Market> GetSingleMarket(string market)
+        {
+            var response = await client.GetStringAsync($"https://ftx.com/api/markets/{market}");
+            SingleResponse responseObj = JsonConvert.DeserializeObject<SingleResponse>(response);
+            Market marketResult = responseObj.Result;
+            return marketResult;
+        }
     }
 
     class Response
     {
         public bool Success { get; set; }
         public ObservableRangeCollection<Market> Result { get; set; }
+    }
+
+    class SingleResponse
+    {
+        public bool Success { get; set; }
+        public Market Result { get; set; }
     }
 }

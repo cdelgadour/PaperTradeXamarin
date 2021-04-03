@@ -1,28 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PaperTradeXamarin.Views.MarketView"
+             x:Class="PaperTradeXamarin.Views.TransactionList"
              xmlns:viewmodels="clr-namespace:PaperTradeXamarin.ViewModels"
              xmlns:model="clr-namespace:PaperTradeXamarin.Models"
-             x:DataType="viewmodels:MarketsViewModel"
-             x:Name="MarketPage"
+             x:DataType="viewmodels:TransactionListViewModel"
+             x:Name="TransactionListPage"
              >
     <ContentPage.BindingContext>
-        <viewmodels:MarketsViewModel/>
+        <viewmodels:TransactionListViewModel/>
     </ContentPage.BindingContext>
 
-    <RefreshView x:DataType="viewmodels:MarketsViewModel" Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy, Mode=OneWay}">
-        <CollectionView x:Name="MarketsViewModel"
-                ItemsSource="{Binding Markets}"
+    <RefreshView x:DataType="viewmodels:TransactionListViewModel" Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy, Mode=OneWay}">
+        <CollectionView x:Name="TransactionListView"
+                ItemsSource="{Binding Transactions}"
                 SelectionMode="None">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Padding="10" x:DataType="model:Market">
-                        <Label Text="{Binding Name}"/>
+                    <StackLayout Padding="10" x:DataType="model:Transaction">
+                        <Label Text="{Binding Amount}" 
+                            LineBreakMode="NoWrap" 
+                            FontSize="16" />
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:MarketsViewModel}}, Path=MarketTapped}"		
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:TransactionListViewModel}}, Path=TransactionTapped}"		
                                 CommandParameter="{Binding .}">
                             </TapGestureRecognizer>
                         </StackLayout.GestureRecognizers>

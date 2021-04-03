@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PaperTradeXamarin.Views.WalletDetailPage"
+             xmlns:viewmodels="clr-namespace:PaperTradeXamarin.ViewModels"
+             xmlns:model="clr-namespace:PaperTradeXamarin.Models"
+             x:DataType="viewmodels:WalletDetailViewModel">
+    <ContentPage.BindingContext>
+        <viewmodels:WalletDetailViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding CurrentWallet.Currency}"/>
+            <Label Text="{Binding CurrentWallet.Balance}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

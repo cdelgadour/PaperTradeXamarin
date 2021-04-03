@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PaperTradeXamarin.Views.TransactionListDetailPage"
+             xmlns:viewmodels="clr-namespace:PaperTradeXamarin.ViewModels"
+             xmlns:model="clr-namespace:PaperTradeXamarin.Models"
+             x:DataType="viewmodels:TransactionListDetailViewModel">
+    <ContentPage.BindingContext>
+        <viewmodels:TransactionListDetailViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding CurrentTransaction.Id}"/>
+            <Label Text="{Binding CurrentTransaction.Amount}"/>
+            <Label Text="{Binding CurrentTransaction.TransactionTotal}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

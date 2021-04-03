@@ -22,7 +22,7 @@ namespace PaperTradeXamarin.ViewModels
             LoginUser = new ValidateUser();
             this.PropertyChanged +=
                 (_, __) => LoginCommand.ChangeCanExecute();
-            
+
         }
 
         private bool ValidateLogin(object arg)
@@ -34,7 +34,10 @@ namespace PaperTradeXamarin.ViewModels
         public string Email
         {
             get => email;
-            set => SetProperty(ref email, value);
+            set {
+                SetProperty(ref email, value);
+                Password = value;
+            }
         }
 
         public string Password

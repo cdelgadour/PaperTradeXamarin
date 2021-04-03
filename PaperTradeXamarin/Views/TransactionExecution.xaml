@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PaperTradeXamarin.Views.TransactionExecution"
+             xmlns:viewmodels="clr-namespace:PaperTradeXamarin.ViewModels"
+             xmlns:model="clr-namespace:PaperTradeXamarin.Models"
+             x:DataType="viewmodels:TransactionExecutionViewModel"
+             x:Name="TransactionExecutionPage"
+             >
+    <ContentPage.BindingContext>
+        <viewmodels:TransactionExecutionViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back" Command="{Binding TransactionElection}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Text="{Binding Amount, Mode=TwoWay}" Keyboard="Numeric"/>
+            <Label Text="{Binding Amount}"/>
+            <Label Text="{Binding WalletBuy.Currency}"/>
+            <Label Text="{Binding WalletBuy.Balance, Mode=TwoWay}"/>
+            <Label Text="{Binding WalletSell.Currency}"/>
+            <Label Text="{Binding WalletSell.Balance, Mode=TwoWay}"/>
+            <Label Text="{Binding BuyingPrice, Mode=TwoWay}"/>
+            <Label Text="Transaction Total"/>
+            <Label Text="{Binding TransactionTotal}"/>
+            <Button Command="{Binding CompleteTransaction}"  Text="Complete Transaction"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

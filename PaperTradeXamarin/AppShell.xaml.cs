@@ -13,6 +13,14 @@ namespace PaperTradeXamarin
             InitializeComponent();
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+            Routing.RegisterRoute(nameof(TransactionElection), typeof(TransactionElection));
+            Routing.RegisterRoute(nameof(TransactionExecution), typeof(TransactionExecution));
+            Routing.RegisterRoute(nameof(TransactionList), typeof(TransactionList));
+            Routing.RegisterRoute(nameof(TransactionListDetailPage), typeof(TransactionListDetailPage));
+            Routing.RegisterRoute(nameof(MarketView), typeof(MarketView));
+            Routing.RegisterRoute(nameof(MarketDetailView), typeof(MarketDetailView));
+            Routing.RegisterRoute(nameof(WalletPage), typeof(WalletPage));
+            Routing.RegisterRoute(nameof(WalletDetailPage), typeof(WalletDetailPage));
         }
 
     }

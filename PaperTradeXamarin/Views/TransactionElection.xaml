@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PaperTradeXamarin.Views.TransactionElection"
+             xmlns:viewmodels="clr-namespace:PaperTradeXamarin.ViewModels"
+             xmlns:model="clr-namespace:PaperTradeXamarin.Models"
+             x:DataType="viewmodels:TransactionViewModel">
+    <ContentPage.BindingContext>
+        <viewmodels:TransactionViewModel/>
+    </ContentPage.BindingContext>
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Button Command="{Binding SelectTransaction}" CommandParameter="1" Grid.Row="0" Grid.Column="0" Text="Buy BTC" />
+        <Button Command="{Binding SelectTransaction}" CommandParameter="2" Grid.Row="0" Grid.Column="1" Text="Sell BTC"/>
+        <Button Command="{Binding SelectTransaction}" CommandParameter="3" Grid.Row="1" Grid.Column="0" Text="Buy ETH"/>
+        <Button Command="{Binding SelectTransaction}" CommandParameter="4" Grid.Row="1" Grid.Column="1" Text="Sell ETH"/>
+    </Grid>
+</ContentPage>
