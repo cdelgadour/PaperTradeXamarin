@@ -22,8 +22,10 @@ namespace PaperTradeXamarin.ViewModels
 
         public AsyncCommand RefreshCommand { get; set; }
 
+
         public TransactionListViewModel()
         {
+            
             Transactions = new ObservableRangeCollection<Transaction>();
             TransactionTapped = new Xamarin.Forms.Command<Transaction>(Selected);
             RefreshCommand = new AsyncCommand(GetTransactionList);
@@ -39,7 +41,7 @@ namespace PaperTradeXamarin.ViewModels
         {
             IsBusy = true;
             Transactions.Clear();
-            var transactions = await TransactionService.GetTransactions();
+            var transactions = await WalletService.GetWalletTransactions();
             Transactions.AddRange(transactions);
             IsBusy = false;
         }
@@ -47,7 +49,7 @@ namespace PaperTradeXamarin.ViewModels
         private async void GetTransactionListInitial()
         {
             Transactions.Clear();
-            var transactions = await TransactionService.GetTransactions();
+            var transactions = await WalletService.GetWalletTransactions();
             Transactions.AddRange(transactions);
         }
     }

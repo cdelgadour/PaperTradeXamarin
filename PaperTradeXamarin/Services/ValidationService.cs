@@ -21,13 +21,19 @@ namespace PaperTradeXamarin.Services
             };
         }
 
-        public static async Task<bool> LoginUser(ValidateUser user)
+        public static async Task<User> LoginUser(ValidateUser user)
         {
             var json = JsonConvert.SerializeObject(user);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var res = await client.PostAsync("api/users/validation", content);
+            User returnUser = new User { Id = 0 };
 
-            return res.IsSuccessStatusCode;
+            if (res.IsSuccessStatusCode)
+            {
+                returnUser = JsonConvert.DeserializeObject<User>(res.Content.ReadAsStringAsync().Result);
+            }
+
+            return returnUser;
         }
     }
 }

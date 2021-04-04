@@ -19,9 +19,13 @@ namespace PaperTradeXamarin.ViewModels
 
         public Xamarin.Forms.Command WalletTapped { get; set; }
 
+        public int UserId { get; set; }
+
 
         public WalletViewModel()
         {
+            var properties = Xamarin.Forms.Application.Current.Properties;
+            UserId = (int)properties["userId"];
             Wallets = new ObservableRangeCollection<Wallet>();
             RefreshCommand = new AsyncCommand(Refresh);
             WalletTapped = new Xamarin.Forms.Command<Wallet>(Selected);
@@ -36,7 +40,8 @@ namespace PaperTradeXamarin.ViewModels
         async void RefreshInitial()
         {
             Wallets.Clear();
-            var wallets = await WalletService.GetWallets();
+            var wallets = await WalletService.GetUserWallets(UserId);
+            LoadWalletOnProperties(wallets);
             foreach (Wallet wallet in wallets)
             {
                 wallet.CurrencyValue = Enum.GetName(typeof(Currency), wallet.Currency);
@@ -44,11 +49,32 @@ namespace PaperTradeXamarin.ViewModels
             Wallets.AddRange(wallets);
         }
 
+        public void LoadWalletOnProperties(IEnumerable<Wallet> wallets)
+        {
+            var properties = Application.Current.Properties;
+            List<string> walletIdList = new List<string>();
+            string joinedList;
+            foreach (var wallet in wallets)
+            {
+                walletIdList.Add(Convert.ToString(wallet.Id));
+            }
+            joinedList = string.Join(",", walletIdList);
+
+            if (!properties.ContainsKey("walletList"))
+            {
+                properties.Add("walletList", joinedList);
+            } else
+            {
+                properties["walletList"] = joinedList;
+            }
+
+        }
+
         async Task Refresh()
         {
             IsBusy = true;
             Wallets.Clear();
-            var wallets = await WalletService.GetWallets();
+            var wallets = await WalletService.GetUserWallets(UserId); 
             foreach (Wallet wallet in wallets)
             {
                 wallet.CurrencyValue = Enum.GetName(typeof(Currency), wallet.Currency);

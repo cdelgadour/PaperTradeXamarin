@@ -36,7 +36,6 @@ namespace PaperTradeXamarin.ViewModels
             get => email;
             set {
                 SetProperty(ref email, value);
-                Password = value;
             }
         }
 
@@ -48,10 +47,18 @@ namespace PaperTradeXamarin.ViewModels
         private async void OnLoginClicked(object obj)
         {
             ValidateUser user = new ValidateUser { Email = email, Password = password };
-            var res = await ValidationService.LoginUser(user);
+            User userRes = await ValidationService.LoginUser(user);
 
-            if (res)
+            if (userRes.Id != 0)
             {
+                var properties = Xamarin.Forms.Application.Current.Properties;
+                if (!properties.ContainsKey("userId"))
+                {
+                    properties.Add("userId", 1);
+                } else
+                {
+                    properties["userId"] = 1;
+                }
                 Application.Current.MainPage = new AppShell();
             } else
             {

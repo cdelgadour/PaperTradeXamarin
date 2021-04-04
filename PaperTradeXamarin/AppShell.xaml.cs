@@ -11,8 +11,6 @@ namespace PaperTradeXamarin
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
-            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
             Routing.RegisterRoute(nameof(TransactionElection), typeof(TransactionElection));
             Routing.RegisterRoute(nameof(TransactionExecution), typeof(TransactionExecution));
             Routing.RegisterRoute(nameof(TransactionList), typeof(TransactionList));

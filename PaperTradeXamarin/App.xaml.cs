@@ -14,8 +14,8 @@ namespace PaperTradeXamarin
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            /*MainPage = new LoginPage();*/
-            MainPage = new AppShell();
+            MainPage = new LoginPage();
+            //MainPage = new AppShell();
         }
 
         protected override void OnStart()
