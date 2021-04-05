@@ -26,4 +26,11 @@ namespace PaperTradeXamarin.Models
 
         public List<Transaction> Debits { get; set; }
     }
+    
+    public class ExtendedWallet : Wallet
+    {
+        public string Color { get; set; }
+        public string Variation { get; set; }
+        public decimal ValueInUsd { get; set; }
+    }
 }
