@@ -11,26 +11,47 @@
         <viewmodels:WalletViewModel/>
     </ContentPage.BindingContext>
 
-    <ListView ItemsSource="{Binding Wallets}"
+    <ListView ItemsSource="{Binding ExtendedWallets}"
               CachingStrategy="RecycleElement"
               IsPullToRefreshEnabled="True"
-              RowHeight="200"
+              RowHeight="150"
               IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-              RefreshCommand="{Binding RefreshCommand}">
+              RefreshCommand="{Binding RefreshCommand}" >
         <ListView.ItemTemplate>
-            <DataTemplate x:DataType="model:Wallet">
+            <DataTemplate x:DataType="model:ExtendedWallet">
                 <ViewCell>
-                    <StackLayout>
-                        <Label Text="{Binding CurrencyValue}"/>
-                        <Label Text="{Binding Balance}"/>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer 
+                    <Frame BorderColor="#1F1D1D"
+                           BackgroundColor="Black"
+                           Padding="0, 0, 0, 10">
+                        <StackLayout Orientation="Horizontal"
+                                 Spacing="50">
+                            <StackLayout Orientation="Vertical"
+                                     WidthRequest="120">
+                                <Label Text="{Binding Currency}"
+                               TextColor="{StaticResource Primary}"
+                                       FontSize="Medium"/>
+                                <Label Text="{Binding Variation}"
+                               TextColor="{Binding Color}"
+                               FontSize="Large"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="End">
+                                <Label Text="{Binding Balance}"
+                               TextColor="{StaticResource Secondary}"
+                               FontSize="Large"/>
+                                <Label Text="Value in USD"
+                               TextColor="{StaticResource Terciary}"/>
+                                <Label Text="{Binding ValueInUsd}"
+                               TextColor="{StaticResource Terciary}"/>
+                            </StackLayout>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"
                                 Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:WalletViewModel}}, Path=WalletTapped}"		
                                 CommandParameter="{Binding .}">
-                            </TapGestureRecognizer>
-                        </StackLayout.GestureRecognizers>
-                    </StackLayout>
+                                </TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </Frame>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
