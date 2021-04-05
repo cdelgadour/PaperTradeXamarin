@@ -25,7 +25,7 @@ namespace PaperTradeXamarin.ViewModels
         public WalletViewModel()
         {
             var properties = Xamarin.Forms.Application.Current.Properties;
-            UserId = (int)properties["userId"];
+            //UserId = (int)properties["userId"];
             Wallets = new ObservableRangeCollection<Wallet>();
             RefreshCommand = new AsyncCommand(Refresh);
             WalletTapped = new Xamarin.Forms.Command<Wallet>(Selected);
@@ -40,7 +40,8 @@ namespace PaperTradeXamarin.ViewModels
         async void RefreshInitial()
         {
             Wallets.Clear();
-            var wallets = await WalletService.GetUserWallets(UserId);
+            /*var wallets = await WalletService.GetUserWallets(UserId);*/
+            var wallets = await WalletService.GetWallets();
             LoadWalletOnProperties(wallets);
             foreach (Wallet wallet in wallets)
             {
@@ -74,7 +75,8 @@ namespace PaperTradeXamarin.ViewModels
         {
             IsBusy = true;
             Wallets.Clear();
-            var wallets = await WalletService.GetUserWallets(UserId); 
+            /*var wallets = await WalletService.GetUserWallets(UserId);*/
+            var wallets = await WalletService.GetWallets();
             foreach (Wallet wallet in wallets)
             {
                 wallet.CurrencyValue = Enum.GetName(typeof(Currency), wallet.Currency);

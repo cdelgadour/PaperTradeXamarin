@@ -31,17 +31,11 @@
 
     <TabBar>
         <ShellContent Title="Wallets" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:WalletPage}" />
+        <!--
         <ShellContent Title="Transactions" Icon="icon_about.png" Route="TransactionListPage" ContentTemplate="{DataTemplate local:TransactionList}" />
         <ShellContent Title="Markets" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:MarketView}" />
         <ShellContent Title="Trade" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:TransactionElection}" />
-    </TabBar>
-
-    <!--
-        If you would like to navigate to this content you can do so by calling
-        await Shell.Current.GoToAsync("//LoginPage");
-    -->
-    <TabBar>
-        <ShellContent Title="Hello" Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+        -->
     </TabBar>
 
 
