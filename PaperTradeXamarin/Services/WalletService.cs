@@ -9,10 +9,9 @@ using Xamarin.Forms;
 
 namespace PaperTradeXamarin.Services
 {
-    class WalletService
+    class WalletService : BaseService
     {
         static HttpClient client;
-        static string BaseUrl = "http://10.0.0.9:45455";
 
         static WalletService()
         {

@@ -14,12 +14,12 @@
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource PrimaryBttnColor}" />
                 <Setter Property="Shell.ForegroundColor" Value="White" />
                 <Setter Property="Shell.TitleColor" Value="White" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource PrimaryBttnColor}" />
                 <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="White"/>
@@ -31,9 +31,11 @@
 
     <TabBar>
         <ShellContent Title="Wallets" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:WalletPage}" />
+        <!--        
         <ShellContent Title="Transactions" Icon="icon_about.png" Route="TransactionListPage" ContentTemplate="{DataTemplate local:TransactionList}" />
         <ShellContent Title="Markets" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:MarketView}" />
         <ShellContent Title="Trade" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:TransactionElection}" />
+        -->
     </TabBar>
 
     <!--

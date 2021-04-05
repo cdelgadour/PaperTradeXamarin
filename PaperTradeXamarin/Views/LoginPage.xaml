@@ -7,18 +7,45 @@
              x:DataType="viewmodels:LoginViewModel"
              mc:Ignorable="d"
              x:Class="PaperTradeXamarin.Views.LoginPage"
+             BackgroundColor="Black"
+             Padding="20, 0, 20, 0"
              Shell.NavBarIsVisible="False">
     <ContentPage.BindingContext>
         <viewmodels:LoginViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
-            <Label Text="Bienvenido a Paper Trade" HorizontalOptions="Center" FontSize="Large" Margin="30"/>
-            <Label Text="Email" FontSize="Medium" />
-            <Entry Text="{Binding Email , Mode=TwoWay}" FontSize="Medium" Placeholder="Introduzca su email."/>
-            <Label Text="Password" FontSize="Medium" />
-            <Entry Text="{Binding Password, Mode=TwoWay}" FontSize="Medium" Placeholder="Introduzca su password." IsPassword="True"/>
-            <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
-        </StackLayout>
+        <Frame BackgroundColor="White"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Center"
+               CornerRadius="20"
+               BorderColor="Green"
+               >
+            <StackLayout 
+            BackgroundColor="White" 
+            Padding="10,0,10,0" 
+            VerticalOptions="Center">
+                <Label 
+                    TextColor="Black" 
+                    TextTransform="Uppercase" 
+                    Text="PaperTrade"
+                    WidthRequest="500" 
+                    HorizontalTextAlignment="Center" 
+                    HorizontalOptions="Center" 
+                    FontSize="Title"
+                    FontAttributes="Bold"
+                    CharacterSpacing="5"
+                    Margin="30"/>
+                <Label TextColor="Green" Text="Email" FontSize="Large"/>
+                <Entry PlaceholderColor="Black" TextColor="Black" Text="{Binding Email , Mode=TwoWay}" FontSize="Medium" Placeholder="Introduzca su email."/>
+                <Label Margin="0, 30, 0, 0" TextColor="Green" Text="Password" FontSize="Large"/>
+                <Entry PlaceholderColor="Black" TextColor="Black" Text="{Binding Password, Mode=TwoWay}" FontSize="Medium" Placeholder="Introduzca su password." IsPassword="True"/>
+                <Button Margin="0, 30, 0, 0" 
+                        VerticalOptions="Center" 
+                        Text="Login" 
+                        Command="{Binding LoginCommand}"
+                        CornerRadius="10"
+                        />
+            </StackLayout>
+        </Frame>
     </ContentPage.Content>
 </ContentPage>

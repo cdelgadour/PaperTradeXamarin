@@ -10,10 +10,9 @@ using System.Threading.Tasks;
 
 namespace PaperTradeXamarin.Services
 {
-    class MarketService
+    class MarketService 
     {
         static HttpClient client;
-        static string BaseUrl = "https://ftx.com/api";
 
         static MarketService()
         {

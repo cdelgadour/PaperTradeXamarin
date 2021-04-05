@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace PaperTradeXamarin.Services
 {
-    class ValidationService
+    class ValidationService : BaseService
     {
         static HttpClient client;
-        static string BaseUrl = "http://10.0.0.9:45455";
 
         static ValidationService()
         {

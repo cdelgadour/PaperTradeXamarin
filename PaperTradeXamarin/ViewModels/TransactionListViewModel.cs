@@ -41,7 +41,8 @@ namespace PaperTradeXamarin.ViewModels
         {
             IsBusy = true;
             Transactions.Clear();
-            var transactions = await WalletService.GetWalletTransactions();
+            /*var transactions = await WalletService.GetWalletTransactions();*/
+            var transactions = await TransactionService.GetTransactions();
             Transactions.AddRange(transactions);
             IsBusy = false;
         }
@@ -49,7 +50,8 @@ namespace PaperTradeXamarin.ViewModels
         private async void GetTransactionListInitial()
         {
             Transactions.Clear();
-            var transactions = await WalletService.GetWalletTransactions();
+            /*var transactions = await WalletService.GetWalletTransactions();*/
+            var transactions = await TransactionService.GetTransactions();
             Transactions.AddRange(transactions);
         }
     }
