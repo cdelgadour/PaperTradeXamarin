@@ -2,7 +2,6 @@
 using MvvmHelpers.Commands;
 using PaperTradeXamarin.Models;
 using PaperTradeXamarin.Services;
-using Syncfusion.SfChart.XForms;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,7 +16,6 @@ namespace PaperTradeXamarin.ViewModels
     public class CandleViewModel : BaseViewModel
     {
         public List<Candle> Candles { get; set; }
-        public ObservableRangeCollection<ChartDataPoint> Data { get; set; }
         public List<string> Labels { get; set; }
 
         public List<CandleStickEntry> Entries { get; set; }
