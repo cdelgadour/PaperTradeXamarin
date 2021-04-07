@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PaperTradeXamarin.Views.ChartPage"
+             xmlns:viewmodels="clr-namespace:PaperTradeXamarin.ViewModels"
+             xmlns:model="clr-namespace:PaperTradeXamarin.Models"
+             x:DataType="viewmodels:CandleViewModel"
+             x:Name="CandlePage"
+             xmlns:ultimateChart="clr-namespace:UltimateXF.Widget.Charts;assembly=UltimateXF">
+    <ContentPage.BindingContext>
+        <viewmodels:CandleViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <FlexLayout JustifyContent="SpaceAround"
+                            Margin="0, 0, 0, 10">
+                    <Button Text="BTC"
+                            Command="{Binding LoadGraphs}"
+                            CommandParameter="BTC/USD"/>
+                    <Button Text="ETH"
+                            Command="{Binding LoadGraphs}"
+                            CommandParameter="ETH/USD"/>
+                </FlexLayout>
+                <Label Text="{Binding CharTitle}"
+                       FontSize="Large"/>
+                <Label Text="Candles" 
+                       FontSize="Medium"
+                       FontAttributes="Bold"/>
+                <ultimateChart:SupportCandleStickChartExtended 
+                                                           VerticalOptions="FillAndExpand"
+                                                           ChartData="{Binding DisplayData}"
+                                                           HorizontalOptions="FillAndExpand"
+                                                           DrawBorders="True"
+                                                           HeightRequest="500"
+                                                           >
+
+                </ultimateChart:SupportCandleStickChartExtended>
+                <Label Text="RSI"
+                       FontSize="Medium"
+                       FontAttributes="Bold"/>
+                <ultimateChart:SupportLineChartExtended 
+                    HorizontalOptions="FillAndExpand"
+                                                    VerticalOptions="FillAndExpand"
+                                                    HeightRequest="500"
+                                                    ChartData="{Binding RSIData}"
+                                                    DrawBorders="false"
+                                                    Margin="5">
+                </ultimateChart:SupportLineChartExtended>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
