@@ -7,9 +7,9 @@
              x:DataType="viewmodels:MarketsViewModel"
              x:Name="MarketPage"
              >
-    <ContentPage.BindingContext>
+    <ContentPage.BindingContext Footer="Click for more info..." FooterAlignment="Center" >
         <viewmodels:MarketsViewModel/>
-    </ContentPage.BindingContext>
+    </ContentPage.BindingContext >
 
     <RefreshView x:DataType="viewmodels:MarketsViewModel" Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy, Mode=OneWay}">
         <CollectionView x:Name="MarketsViewModel"
@@ -17,8 +17,8 @@
                 SelectionMode="None">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Padding="10" x:DataType="model:Market">
-                        <Label Text="{Binding Name}"/>
+                    <StackLayout Padding="15" VerticalOptions="Center" HorizontalOptions="Center" x:DataType="model:Market">
+                        <Label FontAttributes="Bold" FontSize="Large" Text="{Binding Name}"/>
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"
@@ -26,9 +26,14 @@
                                 CommandParameter="{Binding .}">
                             </TapGestureRecognizer>
                         </StackLayout.GestureRecognizers>
+                        
                     </StackLayout>
                 </DataTemplate>
+                
             </CollectionView.ItemTemplate>
+            
         </CollectionView>
+        
     </RefreshView>
+    
 </ContentPage>

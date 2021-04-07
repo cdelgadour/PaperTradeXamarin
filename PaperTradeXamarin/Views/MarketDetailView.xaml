@@ -8,11 +8,11 @@
     <ContentPage.BindingContext>
         <viewmodels:MarketDetailViewModel/>
     </ContentPage.BindingContext>
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="{Binding CurrentMarket.Name}"/>
-            <Label Text="{Binding CurrentMarket.Price}"/>
-            <Label Text="{Binding CurrentMarket.Last}"/>
+    <ContentView>
+        <StackLayout Padding="10,10,0,10">
+            <Label TextColor="Black"  FontSize="20" Text="{Binding CurrentMarket.Name}"/>
+            <Label TextColor="Black"  FontSize="20" Text="{Binding CurrentMarket.Price, StringFormat='Precio: {0}'}"/>
+            <Label TextColor="Black"  FontSize="20" Text="{Binding CurrentMarket.Last, StringFormat='Ultimo Precio: {0}'}"/>
         </StackLayout>
-    </ContentPage.Content>
+    </ContentView>
 </ContentPage>

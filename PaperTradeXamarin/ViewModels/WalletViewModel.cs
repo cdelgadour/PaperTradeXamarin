@@ -114,6 +114,7 @@ namespace PaperTradeXamarin.ViewModels
         {
             IsBusy = true;
             Wallets.Clear();
+            ExtendedWallets.Clear();
             var wallets = await WalletService.GetUserWallets(UserId);
             /*var wallets = await WalletService.GetWallets();*/
             var extendedWallets = createExtended(wallets);
@@ -121,6 +122,7 @@ namespace PaperTradeXamarin.ViewModels
             //Wallets.AddRange(wallets);
             ExtendedWallets.AddRange(extendedWallets);
             IsBusy = false;
+            
         }
     }
 }

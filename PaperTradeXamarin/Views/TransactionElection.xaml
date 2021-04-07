@@ -8,7 +8,7 @@
     <ContentPage.BindingContext>
         <viewmodels:TransactionViewModel/>
     </ContentPage.BindingContext>
-    <Grid Padding="10">
+    <Grid Padding="10" BackgroundColor="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="0.5*"/>
@@ -17,9 +17,9 @@
             <ColumnDefinition Width="0.5*"/>
             <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
-        <Button Command="{Binding SelectTransaction}" CommandParameter="1" Grid.Row="0" Grid.Column="0" Text="Buy BTC" />
-        <Button Command="{Binding SelectTransaction}" CommandParameter="2" Grid.Row="0" Grid.Column="1" Text="Sell BTC"/>
-        <Button Command="{Binding SelectTransaction}" CommandParameter="3" Grid.Row="1" Grid.Column="0" Text="Buy ETH"/>
-        <Button Command="{Binding SelectTransaction}" CommandParameter="4" Grid.Row="1" Grid.Column="1" Text="Sell ETH"/>
+        <Button Command="{Binding SelectTransaction}" CommandParameter="1" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" ImageSource="buyBTC.png" />
+        <Button Command="{Binding SelectTransaction}" CommandParameter="2" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="1" ImageSource="sellBTC.png" />
+        <Button Command="{Binding SelectTransaction}" CommandParameter="3" BackgroundColor="Transparent" Grid.Row="1" Grid.Column="0" ImageSource="buyETH.png" />
+        <Button Command="{Binding SelectTransaction}" CommandParameter="4" BackgroundColor="Transparent" Grid.Row="1" Grid.Column="1" ImageSource="sellETH.png" />
     </Grid>
 </ContentPage>

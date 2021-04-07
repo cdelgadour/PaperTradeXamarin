@@ -14,17 +14,19 @@
         <ToolbarItem Text="Back" Command="{Binding TransactionElection}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <Entry Text="{Binding Amount, Mode=TwoWay}" Keyboard="Numeric"/>
-            <Label Text="{Binding Amount}"/>
-            <Label Text="{Binding WalletBuy.Currency}"/>
-            <Label Text="{Binding WalletBuy.Balance, Mode=TwoWay}"/>
-            <Label Text="{Binding WalletSell.Currency}"/>
-            <Label Text="{Binding WalletSell.Balance, Mode=TwoWay}"/>
-            <Label Text="{Binding BuyingPrice, Mode=TwoWay}"/>
-            <Label Text="Transaction Total"/>
-            <Label Text="{Binding TransactionTotal}"/>
-            <Button Command="{Binding CompleteTransaction}"  Text="Complete Transaction"/>
+        <StackLayout Padding="10,10,10,10">
+            <Label Padding="0,10,0,0" TextColor="Black" FontSize="Large" Text="Inserte Monto:"/>
+            <Entry FontSize="Large" TextColor="Black" Text="{Binding Amount, Mode=TwoWay}" Keyboard="Numeric"/>
+            <!--<Label Text="{Binding Amount}"/>-->
+            <Label Padding="0,10,0,0" FontSize="Large" TextColor="Black" Text="{Binding WalletBuy.Currency}"/>
+            <Label FontSize="Large" TextColor="Black" Text="{Binding WalletBuy.Balance, Mode=TwoWay}"/>
+            <Label FontSize="Large" TextColor="Black" Text="{Binding WalletSell.Currency}"/>
+            <Label FontSize="Large" TextColor="Black" Text="{Binding WalletSell.Balance, Mode=TwoWay}"/>
+            <Label FontSize="Large" TextColor="Black" Text="Precio de Compra"/>
+            <Label FontSize="Large" TextColor="Black" Text="{Binding BuyingPrice, Mode=TwoWay}"/>
+            <Label TextDecorations="Underline" Padding="0,20,0,0" FontSize="Large" TextColor="Black" Text="Transaction Total"/>
+            <Label FontSize="Large" TextColor="Black" Text="{Binding TransactionTotal}"/>
+            <Button  TextColor="Black" Command="{Binding CompleteTransaction}"  Text="Complete Transaction"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

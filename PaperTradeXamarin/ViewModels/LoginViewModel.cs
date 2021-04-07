@@ -62,7 +62,7 @@ namespace PaperTradeXamarin.ViewModels
                 Application.Current.MainPage = new AppShell();
             } else
             {
-                await Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Error", "No es valido el email/password.", "OK");
+                await Application.Current.MainPage.DisplayAlert("Error", "No es valido el email/password.", "OK");
             }           
         }
     }

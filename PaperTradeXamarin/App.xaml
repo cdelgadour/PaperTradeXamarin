@@ -10,7 +10,7 @@
             <Color x:Key="Primary">#7BB735</Color>
             <Color x:Key="Secondary">#7B7171</Color>
             <Color x:Key="Terciary">#FFFFFF</Color>
-            <Style TargetType="Button">
+            <!--<Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
@@ -38,7 +38,7 @@
             </Style>
             <Style TargetType="ListView">
                 <Setter Property="BackgroundColor" Value="Black"></Setter>
-            </Style>
+            </Style>-->
         </ResourceDictionary>        
     </Application.Resources>
 </Application>

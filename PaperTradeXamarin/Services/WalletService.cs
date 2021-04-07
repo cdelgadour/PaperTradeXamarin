@@ -12,7 +12,7 @@ namespace PaperTradeXamarin.Services
     class WalletService
     {
         static HttpClient client;
-        static string BaseUrl = "http://10.0.0.9:45455";
+        static string BaseUrl = "http://10.0.0.10:45455";
 
         static WalletService()
         {

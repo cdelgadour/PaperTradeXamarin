@@ -2,8 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PaperTradeXamarin.Views.WalletPage"
+             xmlns:sharpnado="clr-namespace:Sharpnado.Presentation.Forms.RenderedViews;assembly=Sharpnado.Presentation.Forms"
              xmlns:viewmodels="clr-namespace:PaperTradeXamarin.ViewModels"
-             xmlns:model="clr-namespace:PaperTradeXamarin.Models"
+             xmlns:model="clr-namespace:PaperTradeXamarin.Models" xmlns:sharpnado1="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame"
              x:DataType="viewmodels:WalletViewModel"
              x:Name="WalletView"
              >
@@ -11,17 +12,18 @@
         <viewmodels:WalletViewModel/>
     </ContentPage.BindingContext>
 
-    <ListView ItemsSource="{Binding ExtendedWallets}"
+    <ListView BackgroundColor="#1F1D1D" 
+              ItemsSource="{Binding ExtendedWallets}"
               CachingStrategy="RecycleElement"
               IsPullToRefreshEnabled="True"
-              RowHeight="150"
+              RowHeight="120"
               IsRefreshing="{Binding IsBusy, Mode=OneWay}"
               RefreshCommand="{Binding RefreshCommand}" >
         <ListView.ItemTemplate>
             <DataTemplate x:DataType="model:ExtendedWallet">
                 <ViewCell>
-                    <Frame BorderColor="#1F1D1D"
-                           BackgroundColor="Black"
+                    <Frame BorderColor="Black"
+                           BackgroundColor="#1F1D1D"
                            Padding="0, 0, 0, 10">
                         <StackLayout Orientation="Horizontal"
                                  Spacing="50">
@@ -38,7 +40,7 @@
                                 <Label Text="{Binding Balance}"
                                TextColor="{StaticResource Secondary}"
                                FontSize="Large"/>
-                                <Label Text="Value in USD"
+                                <Label Text="Valor en Dolares"
                                TextColor="{StaticResource Terciary}"/>
                                 <Label Text="{Binding ValueInUsd}"
                                TextColor="{StaticResource Terciary}"/>

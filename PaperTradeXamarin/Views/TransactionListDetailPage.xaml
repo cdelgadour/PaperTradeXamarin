@@ -8,11 +8,12 @@
     <ContentPage.BindingContext>
         <viewmodels:TransactionListDetailViewModel/>
     </ContentPage.BindingContext>
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="{Binding CurrentTransaction.Id}"/>
-            <Label Text="{Binding CurrentTransaction.Amount}"/>
-            <Label Text="{Binding CurrentTransaction.TransactionTotal}"/>
+    <ContentView>
+        <StackLayout Padding="10,10,0,10">
+            <Label TextColor="Black" FontSize="20" Text="{Binding CurrentTransaction.CreationDate, StringFormat='Fecha: {0}'}"/>
+            <Label TextColor="Black" FontSize="20" Text="{Binding CurrentTransaction.BuyingPrice, StringFormat='Precio de Compra: {0}'}"/>
+            <Label TextColor="Black" FontSize="20" Text="{Binding CurrentTransaction.Amount, StringFormat='Monto: {0}'}"/>
+            <Label TextColor="Black" FontSize="20" Text="{Binding CurrentTransaction.TransactionTotal, StringFormat='Total de Transacción: {0}'}"/>
         </StackLayout>
-    </ContentPage.Content>
+    </ContentView>
 </ContentPage>

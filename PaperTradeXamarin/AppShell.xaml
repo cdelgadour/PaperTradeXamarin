@@ -4,13 +4,6 @@
        xmlns:local="clr-namespace:PaperTradeXamarin.Views"
        Title="PaperTradeXamarin"
        x:Class="PaperTradeXamarin.AppShell">
-
-    <!--
-        The overall app visual hierarchy is defined here, along with navigation.
-    
-        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
-    -->
-
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
@@ -30,12 +23,10 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="Wallets" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:WalletPage}" />
-        <!--
-        <ShellContent Title="Transactions" Icon="icon_about.png" Route="TransactionListPage" ContentTemplate="{DataTemplate local:TransactionList}" />
-        <ShellContent Title="Markets" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:MarketView}" />
-        <ShellContent Title="Trade" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:TransactionElection}" />
-        -->
+        <ShellContent Title="Wallets" Icon="wallet.png" ContentTemplate="{DataTemplate local:WalletPage}" />
+        <ShellContent Title="Transactions" Icon="transaction.png" Route="TransactionListPage" ContentTemplate="{DataTemplate local:TransactionList}" />
+        <ShellContent Title="Markets" Icon="market.png" ContentTemplate="{DataTemplate local:MarketView}" />
+        <ShellContent Title="Trade" Icon="trade.png" ContentTemplate="{DataTemplate local:TransactionElection}" />
     </TabBar>
 
 
