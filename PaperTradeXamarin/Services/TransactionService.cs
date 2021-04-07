@@ -11,10 +11,9 @@ using Xamarin.Forms;
 
 namespace PaperTradeXamarin.Services
 {
-    class TransactionService
+    class TransactionService : BaseService
     {
         static HttpClient client;
-        static string BaseUrl = "http://10.0.0.10:45455";
 
         static TransactionService()
         {
