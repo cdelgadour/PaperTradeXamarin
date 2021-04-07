@@ -8511,6 +8511,18 @@ namespace PaperTradeXamarin.Droid
 			// aapt resource value: 0x7F010013
 			public const int ExitToRight = 2130771987;
 			
+			// aapt resource value: 0x7F010014
+			public const int SfChart_Fade_In = 2130771988;
+			
+			// aapt resource value: 0x7F010015
+			public const int SfChart_Fade_Out = 2130771989;
+			
+			// aapt resource value: 0x7F010016
+			public const int SfChart_Scale_In = 2130771990;
+			
+			// aapt resource value: 0x7F010017
+			public const int SfChart_Scale_Out = 2130771991;
+			
 			static Animation()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -11419,10 +11431,10 @@ namespace PaperTradeXamarin.Droid
 			public const int abc_vector_test = 2131165273;
 			
 			// aapt resource value: 0x7F07005A
-			public const int avd_hide_password = 2131165274;
+			public const int Avatar1 = 2131165274;
 			
 			// aapt resource value: 0x7F07005B
-			public const int avd_show_password = 2131165275;
+			public const int Avatar10 = 2131165275;
 			
 			// aapt resource value: 0x7F07005C
 			public const int bb_bottom_bar_top_shadow = 2131165276;
@@ -11630,10 +11642,10 @@ namespace PaperTradeXamarin.Droid
 			public const int always = 2131230749;
 			
 			// aapt resource value: 0x7F08001E
-			public const int async = 2131230750;
+			public const int annotationLayout = 2131230750;
 			
 			// aapt resource value: 0x7F08001F
-			public const int auto = 2131230751;
+			public const int async = 2131230751;
 			
 			// aapt resource value: 0x7F080020
 			public const int bb_bottom_bar_background_overlay = 2131230752;
