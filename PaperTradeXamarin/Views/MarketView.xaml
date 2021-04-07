@@ -16,7 +16,7 @@
                 ItemsSource="{Binding Markets}"
                 SelectionMode="None">
             <CollectionView.ItemTemplate>
-                <DataTemplate >
+                <DataTemplate>
                     <StackLayout Padding="15" VerticalOptions="Center" HorizontalOptions="Center" x:DataType="model:Market">
                         <Label HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large" Text="{Binding Name}"/>
                         <StackLayout.GestureRecognizers>

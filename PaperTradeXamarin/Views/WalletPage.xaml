@@ -12,7 +12,7 @@
         <viewmodels:WalletViewModel/>
     </ContentPage.BindingContext>
 
-    <ListView BackgroundColor="#1F1D1D" 
+    <ListView 
               ItemsSource="{Binding ExtendedWallets}"
               CachingStrategy="RecycleElement"
               IsPullToRefreshEnabled="True"
@@ -22,9 +22,8 @@
         <ListView.ItemTemplate>
             <DataTemplate x:DataType="model:ExtendedWallet">
                 <ViewCell>
-                    <Frame BorderColor="Black"
-                           BackgroundColor="#1F1D1D"
-                           Padding="0, 0, 0, 10">
+                    <Frame 
+                           Padding="0, 10, 0, 10">
                         <StackLayout Orientation="Horizontal"
                                  Spacing="50">
                             <StackLayout Orientation="Vertical"
@@ -41,9 +40,9 @@
                                TextColor="{StaticResource Secondary}"
                                FontSize="Large"/>
                                 <Label Text="Valor en Dolares"
-                               TextColor="{StaticResource Terciary}"/>
+                               TextColor="Black"/>
                                 <Label Text="{Binding ValueInUsd}"
-                               TextColor="{StaticResource Terciary}"/>
+                               TextColor="Black"/>
                             </StackLayout>
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer 

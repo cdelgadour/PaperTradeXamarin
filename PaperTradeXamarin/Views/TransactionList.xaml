@@ -18,13 +18,13 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="5" x:DataType="model:Transaction">
-                        <Frame BorderColor="Black" 
-                            BackgroundColor="#1F1D1D">
+                        <Frame BorderColor="LightGray" 
+                            BackgroundColor="LightGray">
                             <StackLayout>
-                                <Label TextColor="White" Text="{Binding Amount, StringFormat='Cantidad: {0}'}" 
+                                <Label TextColor="Black" Text="{Binding Amount, StringFormat='Cantidad: {0}'}" 
                                 LineBreakMode="NoWrap" 
                                 FontSize="20" />
-                                <Label TextColor="White" Text="{Binding BuyingPrice, StringFormat='Precio de Compra: {0}'}" 
+                                <Label TextColor="Black" Text="{Binding BuyingPrice, StringFormat='Precio de Compra: {0}'}" 
                                 LineBreakMode="NoWrap" 
                                 FontSize="20" />
                                 
