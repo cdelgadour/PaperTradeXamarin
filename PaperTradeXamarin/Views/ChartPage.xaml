@@ -14,19 +14,17 @@
         <ScrollView>
             <StackLayout>
                 <FlexLayout JustifyContent="SpaceAround"
-                            Margin="0, 0, 0, 10">
-                    <Button Text="BTC"
-                            Command="{Binding LoadGraphs}"
+                            Margin="0, 20, 0, 10">
+                    <Button FontAttributes="Bold" BackgroundColor="LightGray" Text="BTC"
+                           FontSize="18" Command="{Binding LoadGraphs}"
                             CommandParameter="BTC/USD"/>
-                    <Button Text="ETH"
+                    <Button FontAttributes="Bold" FontSize="18" BackgroundColor="LightGray" Text="ETH"
                             Command="{Binding LoadGraphs}"
                             CommandParameter="ETH/USD"/>
                 </FlexLayout>
-                <Label Text="{Binding CharTitle}"
+                <Label Padding="0,10,10,0" HorizontalOptions="Center" FontAttributes="Bold" Text="{Binding CharTitle}"
                        FontSize="Large"/>
-                <Label Text="Candles" 
-                       FontSize="Medium"
-                       FontAttributes="Bold"/>
+                
                 <ultimateChart:SupportCandleStickChartExtended 
                                                            VerticalOptions="FillAndExpand"
                                                            ChartData="{Binding DisplayData}"

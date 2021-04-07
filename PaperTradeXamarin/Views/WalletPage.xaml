@@ -39,9 +39,9 @@
                                 <Label Text="{Binding Balance}"
                                TextColor="{StaticResource Secondary}"
                                FontSize="Large"/>
-                                <Label Text="Valor en Dolares"
+                                <Label FontSize="Medium" Text="Valor en Dolares"
                                TextColor="Black"/>
-                                <Label Text="{Binding ValueInUsd}"
+                                <Label FontSize="Medium" Text="{Binding ValueInUsd}"
                                TextColor="Black"/>
                             </StackLayout>
                             <StackLayout.GestureRecognizers>

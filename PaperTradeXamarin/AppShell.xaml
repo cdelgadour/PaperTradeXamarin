@@ -27,7 +27,7 @@
         <ShellContent Title="Transactions" Icon="transaction.png" Route="TransactionListPage" ContentTemplate="{DataTemplate local:TransactionList}" />
         <ShellContent Title="Markets" Icon="market.png" ContentTemplate="{DataTemplate local:MarketView}" />
         <ShellContent Title="Trade" Icon="trade.png" ContentTemplate="{DataTemplate local:TransactionElection}" />
-        <ShellContent Title="Wallets" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ChartPage}" />
+        <ShellContent Title="Candles" Icon="candles.png" ContentTemplate="{DataTemplate local:ChartPage}" />
     </TabBar>
 
 
