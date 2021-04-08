@@ -10,7 +10,7 @@
     </ContentPage.BindingContext>
     <ContentView>
         <StackLayout Padding="10,10,0,10">
-            <Label TextColor="Black"  FontSize="20" Text="{Binding CurrentMarket.Name}"/>
+            <Label BackgroundColor="#7bb735" Padding="0,10,0,0" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Black"  FontSize="20" Text="{Binding CurrentMarket.Name}"/>
             <Label TextColor="Black"  FontSize="20" Text="{Binding CurrentMarket.Price, StringFormat='Precio: {0}'}"/>
             <Label TextColor="Black"  FontSize="20" Text="{Binding CurrentMarket.Last, StringFormat='Ultimo Precio: {0}'}"/>
         </StackLayout>

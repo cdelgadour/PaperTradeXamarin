@@ -10,7 +10,7 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding CurrentWallet.Currency}"/>
+            <Label FontAttributes="Bold" Text="{Binding CurrentWallet.Currency}"/>
             <Label Text="{Binding CurrentWallet.Balance}"/>
         </StackLayout>
     </ContentPage.Content>
